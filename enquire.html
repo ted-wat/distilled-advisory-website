@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Begin a conversation · Distilled Advisory</title>
+  <meta name="description" content="Short intake form for founders, operators, and investors enquiring about Distilled Advisory.">
+  <meta name="theme-color" content="#0B0B0C">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="canonical" href="https://distilledadvisory.com.au/enquire.html">
+
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/favicon.svg" color="#0B0B0C">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a href="/" class="nav__brand" aria-label="Distilled Advisory home">
+    <span class="nav__wordmark">DISTILLED</span>
+    <span class="nav__desc">Advisory &amp; Commercial Strategy</span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="/#problem" class="nav__link">Problem</a>
+    <a href="/#work" class="nav__link">Work</a>
+    <a href="/#engagement" class="nav__link">Engagement</a>
+    <a href="/" class="nav__cta">Back</a>
+  </nav>
+
+  <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
+    <span class="nav__toggle-bar"></span>
+  </button>
+</header>
+
+<aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <a href="/" class="nav-drawer__link">Home</a>
+  <a href="/#problem" class="nav-drawer__link">Problem</a>
+  <a href="/#approach" class="nav-drawer__link">Approach</a>
+  <a href="/#work" class="nav-drawer__link">Work</a>
+  <a href="/#engagement" class="nav-drawer__link">Engagement</a>
+</aside>
+
+<main id="main">
+  <section class="enquire">
+    <div class="container">
+      <div class="enquire__intro reveal">
+        <div class="eyebrow" style="margin-bottom: var(--space-6);">Begin a conversation</div>
+        <h1>A short intake.<br>Two business days.</h1>
+        <hr class="hairline--short" style="margin: var(--space-6) 0;">
+        <p>
+          Send what we need to read the situation. We reply within two business days. If the work is right for us we say so. If it is not, we tell you who we would send you to.
+        </p>
+        <p>
+          Prefer email? <a href="mailto:ted@campaspegroup-au.com" style="border-bottom: 1px solid currentColor; padding-bottom: 1px;">ted@campaspegroup-au.com</a>.
+        </p>
+      </div>
+
+      <form
+        class="form reveal"
+        name="enquiry"
+        method="POST"
+        action="/thanks.html"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="enquiry">
+
+        <p class="form__hp">
+          <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <div class="form__field">
+          <label class="form__label" for="name">Your name<span class="form__required">required</span></label>
+          <input class="form__input" type="text" id="name" name="name" required autocomplete="name" placeholder="First and last">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="email">Email<span class="form__required">required</span></label>
+          <input class="form__input" type="email" id="email" name="email" required autocomplete="email" placeholder="The address we should reply to">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="brand">Brand name</label>
+          <input class="form__input" type="text" id="brand" name="brand" placeholder="If the brand exists, what is it called">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="role">Your role<span class="form__required">required</span></label>
+          <input class="form__input" type="text" id="role" name="role" required placeholder="Founder, investor, operator, advisor">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="stage">Stage of business<span class="form__required">required</span></label>
+          <select class="form__select" id="stage" name="stage" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Pre-launch concept">Pre-launch concept</option>
+            <option value="In production, pre-launch">In production, pre-launch</option>
+            <option value="Recently launched">Recently launched</option>
+            <option value="Distributed, early scale">Distributed, early scale</option>
+            <option value="Established, repositioning">Established, repositioning</option>
+            <option value="Investor enquiry">Investor enquiry</option>
+            <option value="Operator advisory">Operator advisory</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="distribution">Current distribution status</label>
+          <select class="form__select" id="distribution" name="distribution">
+            <option value="" disabled selected>Select one</option>
+            <option value="None yet">None yet</option>
+            <option value="In conversation with distributors">In conversation with distributors</option>
+            <option value="Self-distributed or direct">Self-distributed or direct</option>
+            <option value="Working with one distributor">Working with one distributor</option>
+            <option value="Multi-state or multi-country">Multi-state or multi-country</option>
+            <option value="Not applicable">Not applicable</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="capital">Capital position</label>
+          <select class="form__select" id="capital" name="capital">
+            <option value="" disabled selected>Select one</option>
+            <option value="Founder funded">Founder funded</option>
+            <option value="Friends and family">Friends and family</option>
+            <option value="Angel investors">Angel investors</option>
+            <option value="Family office backed">Family office backed</option>
+            <option value="Institutional capital">Institutional capital</option>
+            <option value="Currently raising">Currently raising</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="brief">What you want from the engagement<span class="form__required">required</span></label>
+          <textarea class="form__textarea" id="brief" name="brief" required rows="5" placeholder="Two paragraphs is enough. The decision in front of you, the position you are in, what good would look like."></textarea>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="referral">How you heard about us</label>
+          <input class="form__input" type="text" id="referral" name="referral" placeholder="An introduction, a search, a referral">
+        </div>
+
+        <p class="form__note">
+          We read every enquiry personally. You will hear back within two business days. We do not share details with third parties.
+        </p>
+
+        <div class="form__actions">
+          <button type="submit" class="form__submit">Send enquiry</button>
+          <a href="/" class="btn btn--ghost-dark">Back to the site</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__bottom" style="border-top: 1px solid rgba(244,242,239,0.18); padding-top: var(--space-6);">
+    <div>&copy; 2026 Distilled Advisory. All rights reserved.</div>
+    <div>Privacy notice &middot; No tracking cookies in use.</div>
+    <div class="footer__d" aria-hidden="true">D</div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /enquire.html
+Disallow: /thanks.html
+
+Sitemap: https://distilledadvisory.com.au/sitemap.xml

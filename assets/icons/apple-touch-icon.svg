@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Distilled">
+  <rect width="180" height="180" rx="32" fill="#0B0B0C"/>
+  <text x="90" y="130"
+    font-family="'Cormorant Garamond', 'Editorial New', Georgia, serif"
+    font-weight="500"
+    font-size="140"
+    letter-spacing="-5"
+    text-anchor="middle"
+    fill="#F4F2EF">D</text>
+</svg>

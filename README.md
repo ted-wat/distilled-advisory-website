@@ -1,0 +1,192 @@
+# Distilled Advisory — Website
+
+The public website for Distilled Advisory. Entity 01 of the Distilled house.
+
+Live: _(URL added after first deploy)_
+Repository: _(URL added after first push)_
+
+---
+
+## Stack
+
+Plain HTML, CSS custom properties + Grid + Flexbox, and a small amount of vanilla JavaScript. No framework. No build step.
+
+You can open any `.html` file in a text editor, change a sentence, and push it to GitHub. Netlify rebuilds and goes live in around fifteen seconds. There is nothing to compile, no dependency to update, no Node modules to install just to edit copy.
+
+Why no Astro / Eleventy / Next: this is a two-page site that changes a few times a year. Any framework would push you toward npm builds the moment you wanted to fix a typo. Plain HTML is the right answer for the next few years. If the surface area grows past about six pages, revisit.
+
+## File layout
+
+```
+distilled-advisory-website/
+├── index.html                  Long-scroll main page (all sections)
+├── enquire.html                Intake form page
+├── thanks.html                 Post-submit confirmation page
+├── 404.html                    Not-found page
+├── robots.txt                  Search-engine crawl rules
+├── sitemap.xml                 Sitemap (one URL today)
+├── netlify.toml                Netlify deploy and headers config
+├── README.md                   This file
+├── LICENSE                     MIT
+├── .gitignore
+└── assets/
+    ├── css/styles.css          All styles, including design tokens
+    ├── js/site.js              Nav, mobile drawer, scroll reveal
+    ├── icons/
+    │   ├── favicon.svg
+    │   ├── apple-touch-icon.svg
+    │   └── og-image.svg        Open Graph share image
+    └── logos/
+        ├── distilled-wordmark.svg
+        ├── distilled-wordmark-bare.svg
+        ├── distilled-advisory-stacked.svg
+        └── d-master-mark.svg
+```
+
+## Editing guide
+
+Plain-English instructions for the changes you are most likely to make. Edit, save, commit, push. Netlify deploys on every push to `main`.
+
+### Change the hero statement
+
+File: `index.html`, around line 64 to 75.
+Replace the text inside `<h1 class="hero__statement">…</h1>` and the `<p class="hero__lede">…</p>` underneath it.
+
+### Edit any section copy
+
+All sections are inside `index.html`, in the order they appear on the page. The `id` on each `<section>` matches the menu link.
+
+| Section on the page    | `id` to find in the file        |
+|------------------------|----------------------------------|
+| The Market Problem     | `id="problem"`                   |
+| An Operator's View     | `id="approach"`                  |
+| How We Support Founders| `id="value"`                     |
+| What We Do             | `id="work"`                      |
+| The Pathway            | `id="pathway"`                   |
+| Who This Is For        | `id="who"`                       |
+| Results, Not Noise     | `id="results"`                   |
+| Engagement Structures  | `id="engagement"`                |
+| Start the Conversation | `id="contact"`                   |
+
+Use a text editor's "find" feature with the `id` to jump straight to the section.
+
+### Change a tile (any three-up block)
+
+Each tile looks like this in the HTML:
+
+```html
+<article class="tile reveal">
+  <div class="tile__num">01 &middot; Experience</div>
+  <h3 class="tile__title">A decade of practical commercial work.</h3>
+  <div class="tile__rule"></div>
+  <p class="tile__body">
+    The body copy.
+  </p>
+</article>
+```
+
+Change the three text values. Leave the surrounding tags alone.
+
+### Change the engagement tiers (Silver, Gold, Platinum)
+
+File: `index.html`, search for `Engagement structures` (around line 280).
+Each tier has a `tier__label`, `tier__title`, `tier__lede`, and a `tier__list`. The `tier__list` is a bulleted list of capabilities for that tier.
+
+### Change the contact email
+
+The email lives in three places. Search the project for `ted@campaspegroup-au.com` and replace each one. Files involved:
+
+- `index.html`
+- `enquire.html`
+- `thanks.html`
+- `404.html`
+
+### Change the colours
+
+Don't. The brand is monochrome by design. Adjusting colour drifts away from the positioning.
+
+If you need to tweak the off-black or the warm white at a system level, the two tokens are at the top of `assets/css/styles.css` under the `:root` block, named `--ink-900` and `--paper-100`. Touch them only if a paper test print suggests they need recalibration.
+
+### Replace the share image (Open Graph)
+
+File: `assets/icons/og-image.svg`. Renders at 1200x630. Edit in any vector editor. Keep the wordmark hierarchy and the dark background.
+
+### Add or change images on the page
+
+There are currently no photographic images on the page. The brand's editorial restraint is intentional. If you add atmospheric photography later, store JPGs in `assets/images/` and reference them with relative paths. Image direction notes are in the design system: interiors, materials, observed not staged, low warm light. No people, no spirits-brand cliches.
+
+## How the form works
+
+The intake form on `enquire.html` is wired to Netlify Forms. There is no third-party service, no API key, no Formspree.
+
+How submissions reach you:
+
+1. A visitor submits the form.
+2. Netlify catches the submission and emails it to `ted@campaspegroup-au.com`.
+3. The visitor is redirected to `/thanks.html`.
+
+The email address that receives submissions is configured in the Netlify dashboard under **Site settings → Forms → Form notifications → Add notification → Email notification**.
+
+To change the receiving email or add a second address, do it there. The form itself does not need editing.
+
+## Deploying changes
+
+Once the repo is on GitHub and connected to Netlify, the flow is:
+
+```sh
+git add .
+git commit -m "Update hero copy"
+git push
+```
+
+That is it. Netlify rebuilds within about fifteen seconds.
+
+If GitHub is intimidating, you can also drag-and-drop the project folder onto the Netlify dashboard to publish. The git flow is recommended because it preserves history.
+
+## Pointing a custom domain (five steps)
+
+When you are ready to put `distilledadvisory.com.au` (or any other domain) in front of the Netlify URL:
+
+1. In the Netlify dashboard, open the site, then **Domain management → Add a domain → Add a domain you already own**.
+2. Enter the domain. Netlify will give you either two `NS` records (recommended, easier) or one `CNAME` record.
+3. Log into the domain registrar (where you bought the domain). Open the DNS settings for the domain.
+4. Replace the existing records with the ones Netlify gave you. Save.
+5. Wait fifteen to ninety minutes for DNS to propagate. Netlify will automatically issue a Let's Encrypt SSL certificate (this happens by itself, no action needed).
+
+That is the whole job. The certificate auto-renews. You never have to touch DNS again unless you change provider.
+
+## Analytics
+
+Analytics are off by default. There are no tracking cookies set by this site.
+
+If you decide later that you want simple, privacy-respecting analytics, add one line of script tag to the `<head>` of `index.html`, `enquire.html`, `thanks.html`, and `404.html`. Plausible (`plausible.io`) and Fathom (`usefathom.com`) both provide a single snippet. Neither requires a cookie banner under GDPR or under the Australian Privacy Act.
+
+## Content provenance
+
+Section structure and value pillars (Experience, Access, Judgment; Route to Market, Commercial Structure, Supply Chain; Foundations, Readiness, Launch & Scale; Commercially Open, Capital Ready, Value-Oriented; Time to Market, Capital Protection, Scalable Supply Chain; Silver, Gold, Platinum) come from the Distilled Advisory capability deck.
+
+Prose for each section was authored for this site, in the brand voice, against the section scaffolding from the deck. Tighten or rewrite freely. The constraint is the voice, not the words.
+
+Voice rules applied:
+
+- No em dashes anywhere.
+- Banned: *align, leverage, synergy, sense check, key takeaways, strategic alignment, unlock, ecosystem, revolutionary, game-changing, powerful*.
+- Sentence case except for the wordmark and eyebrow labels.
+- Australian spelling.
+- Operator-direct register, slightly more institutional on external surfaces.
+
+## Local preview (optional)
+
+If you want to see edits before pushing, open the project folder and run:
+
+```sh
+python3 -m http.server 8080
+```
+
+Then visit `http://localhost:8080` in a browser. The site is fully static, so the file paths work locally.
+
+Stop the server with `Ctrl+C`.
+
+## License
+
+MIT. See `LICENSE`.

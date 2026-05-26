@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Distilled Advisory and Commercial Strategy">
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+
+  <!-- Hairline frame -->
+  <rect x="64" y="64" width="1072" height="502" fill="none" stroke="#F4F2EF" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Eyebrow top-left -->
+  <text x="96" y="116"
+    font-family="'Manrope', system-ui, sans-serif"
+    font-size="14"
+    letter-spacing="3.4"
+    fill="#D7D5CF"
+    fill-opacity="0.85">ENTITY 01 OF THE DISTILLED HOUSE</text>
+
+  <!-- Wordmark centre -->
+  <text x="600" y="338"
+    font-family="'Cormorant Garamond', 'Editorial New', Georgia, serif"
+    font-weight="500"
+    font-size="156"
+    letter-spacing="-3"
+    text-anchor="middle"
+    fill="#F4F2EF">DISTILLED</text>
+
+  <!-- Short rule -->
+  <line x1="582" y1="372" x2="618" y2="372" stroke="#F4F2EF" stroke-width="1" stroke-opacity="0.7"/>
+
+  <!-- Descriptor -->
+  <text x="600" y="408"
+    font-family="'Manrope', system-ui, sans-serif"
+    font-size="18"
+    letter-spacing="6.5"
+    text-anchor="middle"
+    fill="#F4F2EF"
+    fill-opacity="0.85">ADVISORY &amp; COMMERCIAL STRATEGY</text>
+
+  <!-- Bottom-left meta -->
+  <text x="96" y="540"
+    font-family="'Manrope', system-ui, sans-serif"
+    font-size="14"
+    letter-spacing="2.8"
+    fill="#D7D5CF"
+    fill-opacity="0.75">MELBOURNE, AUSTRALIA</text>
+
+  <!-- Bottom-right URL -->
+  <text x="1104" y="540"
+    font-family="'Manrope', system-ui, sans-serif"
+    font-size="14"
+    letter-spacing="2.8"
+    text-anchor="end"
+    fill="#D7D5CF"
+    fill-opacity="0.75">DISTILLEDADVISORY.COM.AU</text>
+</svg>
