@@ -95,7 +95,7 @@ Each tier has a `tier__label`, `tier__title`, `tier__lede`, and a `tier__list`. 
 
 ### Change the contact email
 
-The email lives in three places. Search the project for `ted@campaspegroup-au.com` and replace each one. Files involved:
+The email lives in three places. Search the project for `ted@distilledadvisory.au` and replace each one. Files involved:
 
 - `index.html`
 - `enquire.html`
@@ -123,7 +123,7 @@ The intake form on `enquire.html` is wired to Netlify Forms. There is no third-p
 How submissions reach you:
 
 1. A visitor submits the form.
-2. Netlify catches the submission and emails it to `ted@campaspegroup-au.com`.
+2. Netlify catches the submission and emails it to `ted@distilledadvisory.au`.
 3. The visitor is redirected to `/thanks.html`.
 
 The email address that receives submissions is configured in the Netlify dashboard under **Site settings → Forms → Form notifications → Add notification → Email notification**.
@@ -155,7 +155,7 @@ You should not need to touch these. If they ever expire or rotate, set them agai
 
 ## Pointing a custom domain (five steps)
 
-When you are ready to put `distilledadvisory.com.au` (or any other domain) in front of the Netlify URL:
+When you are ready to put `distilledadvisory.au` (or any other domain) in front of the Netlify URL:
 
 1. In the Netlify dashboard, open the site, then **Domain management → Add a domain → Add a domain you already own**.
 2. Enter the domain. Netlify will give you either two `NS` records (recommended, easier) or one `CNAME` record.
