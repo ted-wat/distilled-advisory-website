@@ -1,0 +1,31 @@
+name: Deploy to Netlify
+
+# Runs on every push to main. Deploys the site as it is (static, no build).
+# Auth uses two repo secrets: NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli@latest
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          netlify deploy \
+            --prod \
+            --dir . \
+            --message "Auto-deploy from main (${{ github.sha }})"

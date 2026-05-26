@@ -2,8 +2,9 @@
 
 The public website for Distilled Advisory. Entity 01 of the Distilled house.
 
-Live: _(URL added after first deploy)_
-Repository: _(URL added after first push)_
+Live: <https://distilled-advisory-website.netlify.app>
+Repository: <https://github.com/ted-wat/distilled-advisory-website>
+Netlify dashboard: <https://app.netlify.com/projects/distilled-advisory-website>
 
 ---
 
@@ -131,7 +132,7 @@ To change the receiving email or add a second address, do it there. The form its
 
 ## Deploying changes
 
-Once the repo is on GitHub and connected to Netlify, the flow is:
+Auto-deploys are wired through GitHub Actions. Every push to `main` triggers a workflow that deploys the current state to Netlify.
 
 ```sh
 git add .
@@ -139,9 +140,18 @@ git commit -m "Update hero copy"
 git push
 ```
 
-That is it. Netlify rebuilds within about fifteen seconds.
+That is it. The Action runs in about 45 seconds (you can watch it at <https://github.com/ted-wat/distilled-advisory-website/actions>) and the live site updates immediately after.
 
-If GitHub is intimidating, you can also drag-and-drop the project folder onto the Netlify dashboard to publish. The git flow is recommended because it preserves history.
+If you prefer not to use git at all, you can also drag-and-drop the project folder onto <https://app.netlify.com/drop> to publish ad-hoc. The git flow is recommended because it preserves history and matches what is on GitHub.
+
+### The workflow file
+
+The deploy lives in `.github/workflows/deploy.yml`. It uses two repository secrets that are already set:
+
+- `NETLIFY_AUTH_TOKEN` — a Netlify personal access token
+- `NETLIFY_SITE_ID` — the Netlify project ID for this site
+
+You should not need to touch these. If they ever expire or rotate, set them again at <https://github.com/ted-wat/distilled-advisory-website/settings/secrets/actions>.
 
 ## Pointing a custom domain (five steps)
 
