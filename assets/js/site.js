@@ -1,4 +1,4 @@
-// Distilled Advisory — minimal site JS.
+// Distilled Advisory site JS.
 // Three small jobs: nav scroll state, mobile drawer, scroll-reveal.
 
 (function () {

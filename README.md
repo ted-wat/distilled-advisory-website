@@ -1,4 +1,4 @@
-# Distilled Advisory — Website
+# Distilled Advisory · Website
 
 The public website for Distilled Advisory. Entity 01 of the Distilled house.
 
@@ -12,9 +12,9 @@ Netlify dashboard: <https://app.netlify.com/projects/distilled-advisory-website>
 
 Plain HTML, CSS custom properties + Grid + Flexbox, and a small amount of vanilla JavaScript. No framework. No build step.
 
-You can open any `.html` file in a text editor, change a sentence, and push it to GitHub. Netlify rebuilds and goes live in around fifteen seconds. There is nothing to compile, no dependency to update, no Node modules to install just to edit copy.
+You can open any `.html` file in a text editor, change a sentence, and push it to GitHub. A GitHub Actions workflow deploys to Netlify in about a minute. There is nothing to compile, no dependency to update, no Node modules to install just to edit copy.
 
-Why no Astro / Eleventy / Next: this is a two-page site that changes a few times a year. Any framework would push you toward npm builds the moment you wanted to fix a typo. Plain HTML is the right answer for the next few years. If the surface area grows past about six pages, revisit.
+Why no Astro / Eleventy / Next: this is a four-page static site that changes a few times a year. Any framework would push you toward npm builds the moment you wanted to fix a typo. Plain HTML is the right answer for the next few years. If the surface area grows past about a dozen pages, revisit.
 
 ## File layout
 
@@ -148,14 +148,18 @@ If you prefer not to use git at all, you can also drag-and-drop the project fold
 
 The deploy lives in `.github/workflows/deploy.yml`. It uses two repository secrets that are already set:
 
-- `NETLIFY_AUTH_TOKEN` — a Netlify personal access token
-- `NETLIFY_SITE_ID` — the Netlify project ID for this site
+- `NETLIFY_AUTH_TOKEN`: a Netlify personal access token
+- `NETLIFY_SITE_ID`: the Netlify project ID for this site
 
 You should not need to touch these. If they ever expire or rotate, set them again at <https://github.com/ted-wat/distilled-advisory-website/settings/secrets/actions>.
 
 ## Pointing a custom domain (five steps)
 
-When you are ready to put `distilledadvisory.au` (or any other domain) in front of the Netlify URL:
+**Current state:** `distilledadvisory.au` is already pointed and live, with a Let's Encrypt SSL certificate that auto-renews. The DNS is hosted at VentraIP under "DNS Hosting" mode, with A records for the apex and `www` pointing to Netlify's load balancer (`75.2.60.5`). The certificate covers both `distilledadvisory.au` and `www.distilledadvisory.au`.
+
+The steps below are for reference if you ever move providers, change to a new domain, or rebuild the setup.
+
+When you are ready to put a new domain in front of the Netlify URL:
 
 1. In the Netlify dashboard, open the site, then **Domain management → Add a domain → Add a domain you already own**.
 2. Enter the domain. Netlify will give you either two `NS` records (recommended, easier) or one `CNAME` record.
