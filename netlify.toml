@@ -33,6 +33,19 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Canonical-domain redirects. Send .com.au and www variants to the .au apex.
+[[redirects]]
+  from = "https://distilledadvisory.com.au/*"
+  to = "https://distilledadvisory.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.distilledadvisory.com.au/*"
+  to = "https://distilledadvisory.au/:splat"
+  status = 301
+  force = true
+
 # Custom 404
 [[redirects]]
   from = "/*"
