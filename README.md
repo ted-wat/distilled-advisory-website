@@ -88,19 +88,29 @@ Each tile looks like this in the HTML:
 
 Change the three text values. Leave the surrounding tags alone.
 
-### Change the engagement tiers (Silver, Gold, Platinum)
+### Change the engagement structures
 
-File: `index.html`, search for `Engagement structures` (around line 280).
-Each tier has a `tier__label`, `tier__title`, `tier__lede`, and a `tier__list`. The `tier__list` is a bulleted list of capabilities for that tier.
+File: `index.html`, search for `Engagement structures` (look for `id="engagement"`). There are five named engagements: Discovery Sprint, Commercial Reset, Route-to-Market Review, Buyer-Readiness Preparation, Operator Retainer. Each is an `<article class="engagement-row">` with three columns: title and timeframe on the left, body in the middle, deliverables list on the right.
+
+To change one, edit the `<h3>` (title), the `engagement-row__meta` (timeframe), the `engagement-row__body` (description), and the `engagement-row__deliverables-list` (the four bullet items). Leave the surrounding tags alone.
+
+The "Default engagement" badge sits on Commercial Reset only. To move it, cut the `<div class="engagement-row__default">Default engagement</div>` line and paste it into a different engagement's title block.
 
 ### Change the contact email
 
-The email lives in three places. Search the project for `ted@distilledadvisory.au` and replace each one. Files involved:
+The site uses **two email addresses** by design:
+
+- `info@distilledadvisory.au` is the **public-facing address** shown on every page. This is the institutional surface. It is a Google Workspace alias that forwards to `ted@distilledadvisory.au` for delivery.
+- `ted@distilledadvisory.au` is the **operating address** that receives Netlify Forms submissions directly. Configured in the Netlify dashboard under **Forms → Form notifications**, not in the HTML.
+
+To change the public address, search the project for `info@distilledadvisory.au` and replace each occurrence. Files involved:
 
 - `index.html`
 - `enquire.html`
 - `thanks.html`
 - `404.html`
+
+To change the form-routing address (the one that receives enquiries), do it in Netlify, not in the code. **Site settings → Forms → Form notifications → edit the email notification**.
 
 ### Change the colours
 
@@ -123,7 +133,7 @@ The intake form on `enquire.html` is wired to Netlify Forms. There is no third-p
 How submissions reach you:
 
 1. A visitor submits the form.
-2. Netlify catches the submission and emails it to `ted@distilledadvisory.au`.
+2. Netlify catches the submission and emails it to `ted@distilledadvisory.au` (the operating address, even though the public-facing email shown on the site is `info@distilledadvisory.au`).
 3. The visitor is redirected to `/thanks.html`.
 
 The email address that receives submissions is configured in the Netlify dashboard under **Site settings → Forms → Form notifications → Add notification → Email notification**.
@@ -177,7 +187,7 @@ If you decide later that you want simple, privacy-respecting analytics, add one 
 
 ## Content provenance
 
-Section structure and value pillars (Experience, Access, Judgment; Route to Market, Commercial Structure, Supply Chain; Foundations, Readiness, Launch & Scale; Commercially Open, Capital Ready, Value-Oriented; Time to Market, Capital Protection, Scalable Supply Chain; Silver, Gold, Platinum) come from the Distilled Advisory capability deck.
+Section structure and value pillars (Experience, Access, Judgment; Production and Procurement, Commercial Structure, Route to Market; Foundations, Readiness, Launch & Scale; Commercially Open, Capital Ready, Value-Oriented; Time to Market, Capital Protection, Scalable Supply Chain; and the five named engagements: Discovery Sprint, Commercial Reset, Route-to-Market Review, Buyer-Readiness Preparation, Operator Retainer) come from the Distilled Advisory capability deck and the firm's Commercial Foundations document.
 
 Prose for each section was authored for this site, in the brand voice, against the section scaffolding from the deck. Tighten or rewrite freely. The constraint is the voice, not the words.
 
