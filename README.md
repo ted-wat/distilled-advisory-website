@@ -152,6 +152,8 @@ git push
 
 That is it. The Action runs in about 45 seconds (you can watch it at <https://github.com/ted-wat/distilled-advisory-website/actions>) and the live site updates immediately after.
 
+There is no preview or PR gate, so a push to `main` is live within a minute. After any copy change, open <https://distilledadvisory.au/> in a browser (or curl it) to confirm it reads correctly before walking away.
+
 If you prefer not to use git at all, you can also drag-and-drop the project folder onto <https://app.netlify.com/drop> to publish ad-hoc. The git flow is recommended because it preserves history and matches what is on GitHub.
 
 ### The workflow file
