@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Begin a conversation · Distilled Advisory</title>
+  <title>Talk to Ted · Distilled Advisory</title>
   <meta name="description" content="Short intake form for founders, operators, and investors enquiring about Distilled Advisory.">
   <meta name="theme-color" content="#0B0B0C">
   <meta name="robots" content="noindex, follow">
@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261101">
 </head>
 <body>
 
@@ -54,10 +54,10 @@
     <div class="container">
       <div class="enquire__intro reveal">
         <div class="eyebrow" style="margin-bottom: var(--space-6);">Intake</div>
-        <h1>Before we speak.</h1>
+        <h1>Talk to Ted.</h1>
         <hr class="hairline--short" style="margin: var(--space-6) 0;">
         <p>
-          A short form so we can read stage, goals, and fit before the call. We work with a small number of brands at a time, and we reply within three business days. If the work is right for us we say so. If it is not, we tell you who we would send you to.
+          Tell Ted where the business stands and the decision you need help with. We work with a small number of brands at a time. Ted will review your enquiry and reply within three business days. If there is a fit, we will arrange a conversation about the work.
         </p>
         <p>
           Prefer email? <a href="mailto:info@distilledadvisory.au" style="border-bottom: 1px solid currentColor; padding-bottom: 1px;">info@distilledadvisory.au</a>.
@@ -89,7 +89,7 @@
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="brand">Brand name</label>
+          <label class="form__label" for="brand">Brand name (optional)</label>
           <input class="form__input" type="text" id="brand" name="brand" placeholder="If the brand exists, what is it called">
         </div>
 
@@ -111,6 +111,14 @@
         </div>
 
         <div class="form__field">
+          <label class="form__label" for="brief">What you need help with<span class="form__required">required</span></label>
+          <textarea class="form__textarea" id="brief" name="brief" required rows="5" placeholder="One question is enough. The decision in front of you, what good would look like."></textarea>
+        </div>
+
+        <details class="form__optional">
+          <summary>Additional context (optional)</summary>
+          <p class="form__note">Distribution, capital and how you found us. Share what is useful now, or discuss it with Ted later.</p>
+<div class="form__field">
           <label class="form__label" for="distribution">Current distribution status</label>
           <textarea class="form__textarea" id="distribution" name="distribution" rows="3" placeholder="Where the brand is selling now. Distributor, channel mix, geographies."></textarea>
         </div>
@@ -128,15 +136,13 @@
           </select>
         </div>
 
-        <div class="form__field">
-          <label class="form__label" for="brief">The single commercial question you want answered<span class="form__required">required</span></label>
-          <textarea class="form__textarea" id="brief" name="brief" required rows="5" placeholder="One question is enough. The decision in front of you, what good would look like."></textarea>
-        </div>
+
 
         <div class="form__field">
           <label class="form__label" for="referral">How you heard about us</label>
           <input class="form__input" type="text" id="referral" name="referral" placeholder="An introduction, a search, a referral">
         </div>
+        </details>
 
         <p class="form__note">
           We read every enquiry personally. You will hear back within three business days. We treat all correspondence in confidence. No third-party sharing.
@@ -159,6 +165,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/site.js?v=20261101" defer></script>
 </body>
 </html>

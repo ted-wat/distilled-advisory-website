@@ -59,14 +59,14 @@ All sections are inside `index.html`, in the order they appear on the page. The 
 
 | Section on the page    | `id` to find in the file        |
 |------------------------|----------------------------------|
-| The Market Problem     | `id="problem"`                   |
 | An Operator's View     | `id="approach"`                  |
-| How We Support Founders| `id="value"`                     |
 | What We Do             | `id="work"`                      |
-| The Pathway            | `id="pathway"`                   |
-| Who This Is For        | `id="who"`                       |
-| Results, Not Noise     | `id="results"`                   |
 | Engagement Structures  | `id="engagement"`                |
+| Who This Is For        | `id="who"`                       |
+| The Market Problem     | `id="problem"`                   |
+| How We Support Founders| `id="value"`                     |
+| The Pathway            | `id="pathway"`                   |
+| Results, Not Noise     | `id="results"`                   |
 | Start the Conversation | `id="contact"`                   |
 
 Use a text editor's "find" feature with the `id` to jump straight to the section.
@@ -128,7 +128,7 @@ There are currently no photographic images on the page. The brand's editorial re
 
 ## How the form works
 
-The intake form on `enquire.html` is wired to Netlify Forms. There is no third-party service, no API key, no Formspree.
+The intake form on `enquire.html` is wired to Netlify Forms. Distribution, capital and referral are grouped in an optional disclosure. All original field names, five required fields and the honeypot are retained. There is no third-party service, no API key, no Formspree.
 
 How submissions reach you:
 
@@ -200,6 +200,10 @@ Voice rules applied:
 - Sentence case except for the wordmark and eyebrow labels.
 - Australian spelling.
 - Operator-direct register, slightly more institutional on external surfaces.
+
+## Asset cache versions
+
+CSS and JavaScript have a one-year immutable cache policy. All four pages reference the stylesheet with `?v=20261101`; the two interactive pages use the same query version for site.js. Bump these references together when changing either asset.
 
 ## Local preview (optional)
 

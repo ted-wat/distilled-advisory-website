@@ -20,21 +20,35 @@
 
   // ---- Mobile drawer --------------------------------------------------
   if (toggle && drawer) {
-    toggle.addEventListener('click', () => {
-      const isOpen = drawer.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    const setOpen = (isOpen) => {
+      drawer.classList.toggle('is-open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      drawer.setAttribute('aria-hidden', String(!isOpen));
+      drawer.inert = !isOpen;
       document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // Close drawer when a link inside is clicked.
+    };
+    setOpen(false);
+    toggle.addEventListener('click', () => setOpen(!drawer.classList.contains('is-open')));
     drawer.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', () => setOpen(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (!drawer.classList.contains('is-open')) return;
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggle.focus();
+      }
+      if (event.key === 'Tab') {
+        const last = drawer.querySelector('a:last-child');
+        if (event.shiftKey && document.activeElement === toggle) {
+          event.preventDefault(); last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); toggle.focus();
+        }
+      }
+    });
+    window.matchMedia('(min-width: 881px)').addEventListener('change', (event) => {
+      if (event.matches) setOpen(false);
     });
   }
 
