@@ -2,70 +2,49 @@
 <html lang="en-AU">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Talk to Ted · Distilled Advisory</title>
-  <meta name="description" content="Short intake form for founders, operators, and investors enquiring about Distilled Advisory.">
-  <meta name="theme-color" content="#0B0B0C">
-  <meta name="robots" content="noindex, follow">
-
-  <link rel="canonical" href="https://distilledadvisory.au/enquire.html">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let’s talk · Distilled</title>
+  <meta name="description" content="Tell us about your brand and what you want to do next. Ted replies within three business days.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#2A1913">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="mask-icon" href="/assets/icons/favicon.svg" color="#0B0B0C">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.svg">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20261101">
+  <link rel="stylesheet" href="/assets/css/site.css?v=5">
 </head>
-<body>
+<body data-tone="paper">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header is-light">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/" aria-label="Distilled, home">
+        <span class="brand__word">DISTILLED</span>
+        <span class="brand__desc">Commercial partners for drinks brands</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="/#work">The work</a>
+        <a href="/#ted">About us</a>
+        <a href="/#engagements">Ways to work together</a>
+      </nav>
+    </div>
+  </header>
 
-<a href="#main" class="skip-link">Skip to content</a>
-
-<header class="nav" id="nav">
-  <a href="/" class="nav__brand" aria-label="Distilled Advisory home">
-    <span class="nav__wordmark">DISTILLED</span>
-    <span class="nav__desc">Advisory &amp; Commercial Strategy</span>
-  </a>
-
-  <nav class="nav__links" aria-label="Primary">
-    <a href="/#problem" class="nav__link">Problem</a>
-    <a href="/#work" class="nav__link">Work</a>
-    <a href="/#engagement" class="nav__link">Engagement</a>
-    <a href="/" class="nav__cta">Back</a>
-  </nav>
-
-  <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
-    <span class="nav__toggle-bar"></span>
-  </button>
-</header>
-
-<aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
-  <a href="/" class="nav-drawer__link">Home</a>
-  <a href="/#problem" class="nav-drawer__link">Problem</a>
-  <a href="/#approach" class="nav-drawer__link">Approach</a>
-  <a href="/#work" class="nav-drawer__link">Work</a>
-  <a href="/#engagement" class="nav-drawer__link">Engagement</a>
-</aside>
-
-<main id="main">
-  <section class="enquire">
-    <div class="container">
-      <div class="enquire__intro reveal">
-        <div class="eyebrow" style="margin-bottom: var(--space-6);">Intake</div>
-        <h1>Talk to Ted.</h1>
-        <hr class="hairline--short" style="margin: var(--space-6) 0;">
-        <p>
-          Tell Ted where the business stands and the decision you need help with. We work with a small number of brands at a time. Ted will review your enquiry and reply within three business days. If there is a fit, we will arrange a conversation about the work.
-        </p>
-        <p>
-          Prefer email? <a href="mailto:info@distilledadvisory.au" style="border-bottom: 1px solid currentColor; padding-bottom: 1px;">info@distilledadvisory.au</a>.
-        </p>
+  <main id="main" class="chapter tone-paper enquire" data-tone="paper">
+    <div class="wrap enquire__grid">
+      <div class="enquire__intro">
+        <p class="eyebrow"><span class="stroke"></span>Over to you</p>
+        <h1>Let’s talk.</h1>
+        <p>Tell us about your brand and what you want to do next. A few sentences are enough.</p>
+        <ol class="steps">
+          <li><span class="n">01</span><span>Ted reads every enquiry personally.</span></li>
+          <li><span class="n">02</span><span>You hear back within three business days.</span></li>
+          <li><span class="n">03</span><span>If there is a fit, we arrange a conversation about the work.</span></li>
+        </ol>
       </div>
 
       <form
-        class="form reveal"
+        class="form"
         name="enquiry"
         method="POST"
         action="/thanks.html"
@@ -74,32 +53,32 @@
       >
         <input type="hidden" name="form-name" value="enquiry">
 
-        <p class="form__hp">
+        <p class="form__hp" aria-hidden="true">
           <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
         </p>
 
         <div class="form__field">
-          <label class="form__label" for="name">Your name<span class="form__required">required</span></label>
+          <label class="form__label" for="name">Your name <span class="form__required">required</span></label>
           <input class="form__input" type="text" id="name" name="name" required autocomplete="name" placeholder="First and last">
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="email">Email<span class="form__required">required</span></label>
-          <input class="form__input" type="email" id="email" name="email" required autocomplete="email" placeholder="The address we should reply to">
+          <label class="form__label" for="email">Email <span class="form__required">required</span></label>
+          <input class="form__input" type="email" id="email" name="email" required autocomplete="email" placeholder="The address for our reply">
         </div>
 
         <div class="form__field">
           <label class="form__label" for="brand">Brand name (optional)</label>
-          <input class="form__input" type="text" id="brand" name="brand" placeholder="If the brand exists, what is it called">
+          <input class="form__input" type="text" id="brand" name="brand" placeholder="Your brand name">
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="role">Your role<span class="form__required">required</span></label>
+          <label class="form__label" for="role">Your role <span class="form__required">required</span></label>
           <input class="form__input" type="text" id="role" name="role" required placeholder="Founder, commercial lead, advisor">
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="stage">Stage of business<span class="form__required">required</span></label>
+          <label class="form__label" for="stage">Stage of business <span class="form__required">required</span></label>
           <select class="form__select" id="stage" name="stage" required>
             <option value="" disabled selected>Select one</option>
             <option value="Pre-launch, in production">Pre-launch, in production</option>
@@ -111,60 +90,59 @@
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="brief">What you need help with<span class="form__required">required</span></label>
-          <textarea class="form__textarea" id="brief" name="brief" required rows="5" placeholder="One question is enough. The decision in front of you, what good would look like."></textarea>
+          <label class="form__label" for="brief">What you need help with <span class="form__required">required</span></label>
+          <textarea class="form__textarea" id="brief" name="brief" required rows="5" placeholder="What do you want to do next? A few sentences are enough."></textarea>
         </div>
 
         <details class="form__optional">
-          <summary>Additional context (optional)</summary>
+          <summary>A little more about the business (optional)</summary>
           <p class="form__note">Distribution, capital and how you found us. Share what is useful now, or discuss it with Ted later.</p>
-<div class="form__field">
-          <label class="form__label" for="distribution">Current distribution status</label>
-          <textarea class="form__textarea" id="distribution" name="distribution" rows="3" placeholder="Where the brand is selling now. Distributor, channel mix, geographies."></textarea>
-        </div>
-
-        <div class="form__field">
-          <label class="form__label" for="capital">Capital position</label>
-          <select class="form__select" id="capital" name="capital">
-            <option value="" disabled selected>Select one</option>
-            <option value="Self-funded, runway in place">Self-funded, runway in place</option>
-            <option value="Self-funded, runway tight">Self-funded, runway tight</option>
-            <option value="Capital raised, deploying">Capital raised, deploying</option>
-            <option value="Preparing to raise">Preparing to raise</option>
-            <option value="Generating meaningful revenue">Generating meaningful revenue</option>
-            <option value="Prefer not to say">Prefer not to say</option>
-          </select>
-        </div>
-
-
-
-        <div class="form__field">
-          <label class="form__label" for="referral">How you heard about us</label>
-          <input class="form__input" type="text" id="referral" name="referral" placeholder="An introduction, a search, a referral">
-        </div>
+          <div class="form__field">
+            <label class="form__label" for="distribution">Current distribution status</label>
+            <textarea class="form__textarea" id="distribution" name="distribution" rows="3" placeholder="Where the brand is selling now. Distributor, channel mix, geographies."></textarea>
+          </div>
+          <div class="form__field">
+            <label class="form__label" for="capital">Capital position</label>
+            <select class="form__select" id="capital" name="capital">
+              <option value="" disabled selected>Select one</option>
+              <option value="Self-funded, runway in place">Self-funded, runway in place</option>
+              <option value="Self-funded, runway tight">Self-funded, runway tight</option>
+              <option value="Capital raised, deploying">Capital raised, deploying</option>
+              <option value="Preparing to raise">Preparing to raise</option>
+              <option value="Generating meaningful revenue">Generating meaningful revenue</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label class="form__label" for="referral">How you heard about us</label>
+            <input class="form__input" type="text" id="referral" name="referral" placeholder="An introduction, a search, a referral">
+          </div>
         </details>
 
-        <p class="form__note">
-          We read every enquiry personally. You will hear back within three business days. We treat all correspondence in confidence. No third-party sharing.
-        </p>
+        <p class="form__note">We read every enquiry personally. You will hear back within three business days. We treat all correspondence in confidence. No third-party sharing.</p>
 
         <div class="form__actions">
-          <button type="submit" class="form__submit">Send enquiry</button>
-          <a href="/" class="btn btn--ghost-dark">Back to the site</a>
+          <button type="submit" class="btn btn--dark form__submit">Send enquiry</button>
+          <a href="/" class="link">Back to the site</a>
         </div>
       </form>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer class="footer">
-  <div class="footer__bottom" style="border-top: 1px solid rgba(244,242,239,0.18); padding-top: var(--space-6);">
-    <div>&copy; 2026 Distilled Advisory. All rights reserved.</div>
-    <div>Privacy notice &middot; No tracking cookies in use.</div>
-    <div class="footer__d" aria-hidden="true">D</div>
-  </div>
-</footer>
-
-<script src="/assets/js/site.js?v=20261101" defer></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__row">
+        <a class="brand" href="/" aria-label="Distilled, home">
+          <span class="brand__word">DISTILLED</span>
+          <span class="brand__desc">Commercial partners for drinks brands</span>
+        </a>
+        <address><a href="mailto:info@distilledadvisory.au">info@distilledadvisory.au</a><br>Melbourne, Australia</address>
+      </div>
+      <div class="legal">
+        <span>© 2026 Distilled Advisory Pty Ltd, ABN 90 698 118 580. No tracking cookies in use.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/site.js?v=5"></script>
 </body>
 </html>
